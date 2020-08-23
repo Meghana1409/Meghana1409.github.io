@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>payment gateway integration</title>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <link rel="stylesheet" href="style.css">
+<script src="https://js.instamojo.com/v1/checkout.js"></script>
+<script>
+  /* Start client-defined Callback Handler Functions */
+  function onOpenHandler () {
+    alert('Payments Modal is Opened');
+  }
+
+  function onCloseHandler () {
+    alert('Payments Modal is Closed');
+  }
+
+  function onPaymentSuccessHandler (response) {
+    alert('Payment Success');
+    // console.log('Payment Success Response', response);
+  }
+
+  function onPaymentFailureHandler (response) {
+    alert('Payment Failure');
+    console.log('Payment Failure Response', response);
+  }
+  /* End client-defined Callback Handler Functions */
+
+  /* Configuring Handlers */
+  Instamojo.configure({
+    handlers: {
+      onOpen: onOpenHandler,
+      onClose: onCloseHandler,
+      onSuccess: onPaymentSuccessHandler,
+      onFailure: onPaymentFailureHandler
+    }
+  });
+  function onButtonClick() {
+        Instamojo.open('https://test.instamojo.com/@meghanabhagat9682/lff8599b52f9f46bb8f9663b06c9ed26b/');
+      }
+</script>
+            
+    </head>
+    <body>
+      <div class='bg home'>
+      <div class='menu'>
+      <ul>
+        
+        <li ><a href='#'><i class="fa fa-heartbeat fa-7x" aria-hidden="true"></i></a></li>
+        <li><a href='#'><i class="fa fa-home fa-lg"></i>Home</a></li>
+        <li class='about'><a ><i class="fa fa-user fa-lg" aria-hidden="true"></i>About</a>
+        <div class='menu1'>
+          <ul>
+            <li><a href="abtw.html">Who We Are?</a></li>
+            <li><a href="abtm.html">Our Mission</a></li>
+            
+          </ul>
+        </div>
+        
+        
+        </li>
+        <li><a href="contact.html"><i class="fa fa-phone fa-lg" aria-hidden="true"></i>contact</a></li>
+        <li><a href='contact.html'><i class="fa fa-envelope fa-lg" ></i>Mail</a></li>
+
+      </ul>
+    </div>
+      
+      <div class="logo">
+        <button onclick="onButtonClick()">Donate</button>
+      </div>
+    <h2><i>Forget what you can get and see what you can give.</i></h2>
+  
+  
+</div>
+    </body>
+</html>
